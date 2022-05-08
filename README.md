@@ -1,4 +1,4 @@
-# BraimproveWEB-MVC
+# BraimproveWEB
 Projeto criado para disciplina de LP3, voltado a jogos em web utilizando uma API em java para comunicação com o SQL Server
 
 
