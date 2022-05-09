@@ -47,7 +47,6 @@ public class FakeScoreDataAcessService implements ScoreDao {
             callableStatement.setString(4, dificuldade);
 
             callableStatement.executeUpdate();
-
             return 1;
         }catch (Exception e) {
             System.out.println(e);
@@ -60,13 +59,11 @@ public class FakeScoreDataAcessService implements ScoreDao {
         try{
             callableStatement = (CallableStatement) connection.prepareCall("{CALL SP_DeleteScore(?)}");
             callableStatement.setInt(1, id);
-
             callableStatement.executeUpdate();
 
             return "Score deletado";
         }catch (Exception e) {
             System.out.println(e);
-
             return "O Score não foi deletado";
         }
     }
