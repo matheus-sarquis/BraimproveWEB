@@ -25,6 +25,7 @@ Braimprove - Aplicativo para treinamento cerebral feito no 7º Semestre de EC
 - API Sugoku
 - API Forza.tk
 - API Zoo Animals
+- API Local, desenvolvida pelos autores
   
 ###  Linguagens Utilizadas
 
@@ -33,6 +34,7 @@ Braimprove - Aplicativo para treinamento cerebral feito no 7º Semestre de EC
 - CSS
 - SCSS
 - HTML
+- Java
 
 
 ## Script Database
