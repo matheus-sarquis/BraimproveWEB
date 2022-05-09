@@ -11,6 +11,10 @@ public interface ScoreDao {
 
     int insertScore(String nickname, String game, Float score, String dificuldade);
 
+    default String deleteScore(Integer id){
+        return deleteScore(id);
+    }
+
     default int insertScore(Score score){
         return insertScore(score.getNickname(), score.getGame(), score.getScore(), score.getDificuldade());
     }

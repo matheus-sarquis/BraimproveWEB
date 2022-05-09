@@ -2,6 +2,7 @@ package com.example.Braimprove.dao;
 
 import com.example.Braimprove.model.Score;
 import com.example.Braimprove.dao.ConnectDataBase;
+
 import org.springframework.stereotype.Repository;
 
 import java.sql.*;
@@ -10,7 +11,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Repository("fakeScoreDao")
-
 public class FakeScoreDataAcessService implements ScoreDao {
     Connection connection = ConnectDataBase.conectDb();
     PreparedStatement preparedStatement;
@@ -53,6 +53,21 @@ public class FakeScoreDataAcessService implements ScoreDao {
             System.out.println(e);
 
             return 0;
+        }
+    }
+
+    public String deleteScore(Integer id){
+        try{
+            callableStatement = (CallableStatement) connection.prepareCall("{CALL SP_DeleteScore(?)}");
+            callableStatement.setInt(1, id);
+
+            callableStatement.executeUpdate();
+
+            return "Score deletado";
+        }catch (Exception e) {
+            System.out.println(e);
+
+            return "O Score não foi deletado";
         }
     }
 

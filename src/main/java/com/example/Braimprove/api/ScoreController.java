@@ -27,4 +27,9 @@ public class ScoreController {
     public void addScore(@RequestBody Score score){
         scoreService.addScore(score);
     }
+
+    @DeleteMapping
+    public String deleteScore(@RequestParam("Id") Integer id){
+       return scoreService.deleteScore(id);
+    }
 }

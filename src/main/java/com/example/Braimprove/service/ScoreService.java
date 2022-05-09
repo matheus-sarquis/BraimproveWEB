@@ -16,6 +16,10 @@ public class ScoreService {
         return scoreDao.getAllScore();
     }
 
+    public String deleteScore(Integer id){
+        return scoreDao.deleteScore(id);
+    }
+
     @Autowired
     public ScoreService(@Qualifier("fakeScoreDao") ScoreDao scoreDao) {
         this.scoreDao = scoreDao;
