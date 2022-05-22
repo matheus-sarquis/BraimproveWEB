@@ -1,0 +1,35 @@
+<div class="home">
+  <div class="logo">
+    <img class="brainimg" src="assets/icon/brain.png">
+    <h1>Braimprove</h1>
+  </div>
+
+  <div class="persona">
+    <img id="IconePlayer" class="amimalft" src="assets/icon/brain.png" onload="loadIconePlayereText()">
+    <h1 id="Fact" class="fact">Nome do Animal</h1>
+  </div>
+  
+  <div class="content">
+    <ion-button class="btn" style="margin: 20px" color="tertiary" openSudoku (click)="openSudoku()">
+      SUDOKU
+    </ion-button>
+
+    <ion-button class="btn" style="margin: 20px" color="tertiary" openMemoria (click)="openMemoria()">
+      JOGO DA MEMÓRIA
+    </ion-button>
+
+    <ion-button class="btn" style="margin: 20px" color="tertiary" openRanking (click)="openRanking()">
+      RANKING
+    </ion-button>
+
+    <ion-button class="btn" style="margin: 20px" color="tertiary" openSobre (click)="openSobre()">
+      SOBRE
+    </ion-button>
+  </div>
+
+  <div class="action">
+    <a class="link" openComoJogar (click)="openComoJogar()" style="margin: 20px">Como Jogar ?</a>
+
+    <a class="link" (click)="open()" id="whatsapp-share-btt" rel="nofollow" style="margin: 20px">Convide seus amigos</a>
+  </div>
+</div>

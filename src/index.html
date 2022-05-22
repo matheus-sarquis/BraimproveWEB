@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <title>Braimprove</title>
+
+  <base href="/" />
+
+  <meta name="color-scheme" content="light dark" />
+  <meta name="viewport"
+    content="viewport-fit=cover, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="format-detection" content="telephone=no" />
+  <meta name="msapplication-tap-highlight" content="no" />
+
+  <link rel="icon" type="image/png" href="assets/icon/favicon.png" />
+
+  <!-- add to homescreen for ios -->
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+</head>
+
+<body>
+  <app-root></app-root>
+</body>
+
+</html>
+
+<script type="text/javascript">
+  let srcImagemAnimal = "";
+  let srcFactAnimal = "";
+
+  function loadIconePlayereText() {
+    var imagem = document.getElementById("IconePlayer");
+    var fact = document.getElementById("Fact");
+    if (imagem.getAttribute("src") == "assets/icon/brain.png" && srcImagemAnimal == '') {
+      const request = new XMLHttpRequest();
+      const url = 'https://zoo-animal-api.herokuapp.com/animals/rand';
+      request.open("GET", url);
+      request.send();
+
+      request.onloadend = (e) => {
+        const myJSON = JSON.parse(request.response);
+        imagem.setAttribute('src', myJSON.image_link);
+        fact.innerHTML = myJSON.name;
+
+        srcImagemAnimal = myJSON.image_link;
+        srcFactAnimal = myJSON.name;
+      }
+    }
+    else {
+      imagem.setAttribute('src', srcImagemAnimal);
+      fact.innerHTML = srcFactAnimal;
+    }
+  }
+
+  function validarSudoku() {
+    var obj = [[], [], [], [], [], [], [], [], []];
+    var incompleto = false;
+
+    for (var firstNum = 0; firstNum != 9; firstNum++) {
+      for (var secondNum = 0; secondNum != 9; secondNum++) {
+        var quadradoSudoko = document.getElementById(firstNum.toString() + secondNum.toString());
+
+        if (quadradoSudoko.children[0].value != undefined) {
+          var quadradoSudokoFilho = document.getElementById(firstNum.toString() + secondNum.toString()).children[0];
+          var valor = quadradoSudokoFilho.getAttribute("value").valueOf();
+
+          if (valor != "") {
+            obj[firstNum][secondNum] = quadradoSudokoFilho.getAttribute("value");
+
+          } else
+            incompleto = true;
+        }
+      }
+    }
+
+    if (incompleto)
+      alert("complete todos os campos");
+    else {
+      var data = {
+        board: obj
+      }
+
+      const request = new XMLHttpRequest();
+      const url = 'https://sugoku.herokuapp.com/solve';
+      request.open("POST", url, data);
+      request.send();
+      request.onloadend = (e) => {
+        const myJSON = JSON.parse(request.response);
+      }
+    }
+  }
+
+  function carregarSudoku(dificuldade) {
+    limparSudoko()
+    const request = new XMLHttpRequest();
+    const url = 'https://sugoku.herokuapp.com/board?difficulty=' + dificuldade;
+    request.open("GET", url);
+    request.send();
+
+    request.onloadend = (e) => {
+      const myJSON = JSON.parse(request.response);
+
+      preencheSudoku(myJSON.board);
+    }
+
+  }
+
+  function limparSudoko() {
+    for (var firstNum = 0; firstNum != 9; firstNum++) {
+      for (var secondNum = 0; secondNum != 9; secondNum++) {
+        var quadradoSudoko = document.getElementById(firstNum.toString() + secondNum.toString()).children[0];
+        quadradoSudoko.setAttribute("value", "");
+        quadradoSudoko.dataset.framework = "";
+      }
+    }
+  }
+
+  function preencheSudoku(numeros) {
+
+    for (var firstNum = 0; firstNum != 9; firstNum++) {
+      for (var secondNum = 0; secondNum != 9; secondNum++) {
+        if (numeros[firstNum][secondNum] != 0) {
+          var quadradoSudoko = document.getElementById(firstNum.toString() + secondNum.toString()).children[0];
+          quadradoSudoko.setAttribute('value', numeros[firstNum][secondNum].toString());
+          quadradoSudoko.dataset.framework = "api";
+        }
+      }
+    }
+  }
+
+  let hasFlippedCard = false;
+  let lockBoard = false;
+  let firstCard, secondCard;
+  let cardsVirados = 0;
+  let dificuldade = 0;
+
+  function flipCard(divObj) {
+    if (lockBoard) return;
+
+    if (divObj === firstCard) return;
+
+    if (divObj)
+      divObj.classList.add('flip');
+
+    if (!hasFlippedCard) {
+      hasFlippedCard = true;
+      firstCard = divObj;
+      return;
+    }
+
+    secondCard = divObj;
+    checkForMatch();
+  }
+
+  function checkForMatch() {
+    let isMatch = firstCard.dataset.framework === secondCard.dataset.framework;
+    isMatch ? disableCards() : unflipCards();
+
+    checkifLastCard();
+  }
+
+  function checkifLastCard() {
+    if (cardsVirados == (dificuldade * 2)) {
+      setTimeout(msg, 1000);
+    }
+
+  }
+  function msg() {
+    alert('Parabéns você ganhou');
+    document.location.reload();
+  }
+
+  function disableCards() {
+    firstCard.removeEventListener('click', flipCard);
+    secondCard.removeEventListener('click', flipCard);
+
+    cardsVirados++;
+    cardsVirados++;
+
+    resetBoard();
+  }
+
+  function unflipCards() {
+    lockBoard = true;
+    setTimeout(() => {
+      firstCard.classList.remove('flip');
+      secondCard.classList.remove('flip');
+      resetBoard();
+    }, 1500);
+  }
+
+  function resetBoard() {
+    [hasFlippedCard, lockBoard] = [false, false];
+    [firstCard, secondCard] = [null, null];
+  }
+
+  function loadImage(quantidade, fotossalvas, fotos) {
+
+    var preencheu = false;
+    var ftssalvas = fotossalvas;
+    var fts = fotos;
+    var image;
+    var imagem;
+
+    const request = new XMLHttpRequest();
+    const url = 'https://forza-api.tk';
+    request.open("GET", url);
+    request.send();
+
+    request.onloadend = (e) => {
+      const myJSON = JSON.parse(request.response);
+      imagem = myJSON.image;
+
+      if (!fts.includes(imagem) && (!((quantidade + 1) == ftssalvas))) {
+
+        image = document.getElementById('imagem' + ftssalvas.toString());
+        image.src = imagem;
+        image = document.getElementById('imagem' + (ftssalvas + 8).toString());
+        image.src = imagem;
+        fts += imagem;
+        ftssalvas++;
+      }
+
+      if (!((quantidade + 1) == ftssalvas))
+        loadImage(quantidade, ftssalvas, fts)
+      else {
+        document.querySelectorAll('.memory-card').forEach(card => {
+          let ramdomPos = Math.floor(Math.random() * (quantidade * 2));
+          card.style.order = ramdomPos;
+        });
+
+        for (var index = 1; index <= 16; index++) {
+          image = document.getElementById('imagem' + index.toString());
+          if (!image.src) {
+            var divImagem = document.getElementById('memory-game' + index.toString());
+            divImagem.hidden = true
+          }
+        }
+
+        dificuldade = quantidade;
+      }
+    }
+  };
+</script>

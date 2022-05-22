@@ -1,0 +1,96 @@
+<div class="home">
+    <div class="init">
+        <ion-button id="3" style="margin: 20px" color="tertiary" (click)="start()">
+            COMEÇAR
+        </ion-button>
+    </div>
+    <ion-progress-bar id="1" type="indeterminate" hidden></ion-progress-bar>
+    <div class="game" id="2" hidden>
+        <section class="memory-game">
+            <div class="memory-card" id="memory-game1" onclick="flipCard(this)" data-framework="imagem1">
+                <img class="front-face" id="imagem1" alt="imagem1">
+                <img class="back-face" id="default1" src="assets/icon/yugioh.jpg" alt="Memory Card">
+            </div>
+
+            <div class="memory-card" id="memory-game2" onclick="flipCard(this)" data-framework="imagem2">
+                <img class="front-face" id="imagem2" alt="imagem2">
+                <img class="back-face" id="default2" src="assets/icon/yugioh.jpg" alt="Memory Card">
+            </div>
+
+            <div class="memory-card" id="memory-game3" onclick="flipCard(this)" data-framework="imagem3">
+                <img class="front-face" id="imagem3" alt="imagem3">
+                <img class="back-face" id="default3" src="assets/icon/yugioh.jpg" alt="Memory Card">
+            </div>
+
+            <div class="memory-card" id="memory-game4" onclick="flipCard(this)" data-framework="imagem4">
+                <img class="front-face" id="imagem4" alt="imagem4">
+                <img class="back-face" id="default4" src="assets/icon/yugioh.jpg" alt="Memory Card">
+            </div>
+
+            <div class="memory-card" id="memory-game5" onclick="flipCard(this)" data-framework="imagem5">
+                <img class="front-face" id="imagem5" alt="imagem5">
+                <img class="back-face" id="default5" src="assets/icon/yugioh.jpg" alt="Memory Card">
+            </div>
+
+            <div class="memory-card" id="memory-game6" onclick="flipCard(this)" data-framework="imagem6">
+                <img class="front-face" id="imagem6" alt="imagem6">
+                <img class="back-face" id="default6" src="assets/icon/yugioh.jpg" alt="Memory Card">
+            </div>
+
+            <div class="memory-card" id="memory-game7" onclick="flipCard(this)" data-framework="imagem7">
+                <img class="front-face" id="imagem7" alt="imagem7">
+                <img class="back-face" id="default7" src="assets/icon/yugioh.jpg" alt="Memory Card">
+            </div>
+
+            <div class="memory-card" id="memory-game8" onclick="flipCard(this)" data-framework="imagem8">
+                <img class="front-face" id="imagem8" alt="imagem8">
+                <img class="back-face" id="default8" src="assets/icon/yugioh.jpg" alt="Memory Card">
+            </div>
+
+            <div class="memory-card" id="memory-game9" onclick="flipCard(this)" data-framework="imagem1">
+                <img class="front-face" id="imagem9" alt="imagem1">
+                <img class="back-face" id="default9" src="assets/icon/yugioh.jpg" alt="Memory Card">
+            </div>
+
+            <div class="memory-card" id="memory-game10" onclick="flipCard(this)" data-framework="imagem2">
+                <img class="front-face" id="imagem10" alt="imagem2">
+                <img class="back-face" id="default10" src="assets/icon/yugioh.jpg" alt="Memory Card">
+            </div>
+
+            <div class="memory-card" id="memory-game11" onclick="flipCard(this)" data-framework="imagem3">
+                <img class="front-face" id="imagem11" alt="imagem3">
+                <img class="back-face" id="default11" src="assets/icon/yugioh.jpg" alt="Memory Card">
+            </div>
+
+            <div class="memory-card" id="memory-game12" onclick="flipCard(this)" data-framework="imagem4">
+                <img class="front-face" id="imagem12" alt="imagem4">
+                <img class="back-face" id="default12" src="assets/icon/yugioh.jpg" alt="Memory Card">
+            </div>
+
+            <div class="memory-card" id="memory-game13" onclick="flipCard(this)" data-framework="imagem5">
+                <img class="front-face" id="imagem13" alt="imagem5">
+                <img class="back-face" id="default13" src="assets/icon/yugioh.jpg" alt="Memory Card">
+            </div>
+
+            <div class="memory-card" id="memory-game14" onclick="flipCard(this)" data-framework="imagem6">
+                <img class="front-face" id="imagem14" alt="imagem6">
+                <img class="back-face" id="default14" src="assets/icon/yugioh.jpg" alt="Memory Card">
+            </div>
+
+            <div class="memory-card" id="memory-game15" onclick="flipCard(this)" data-framework="imagem7">
+                <img class="front-face" id="imagem15" alt="imagem7">
+                <img class="back-face" id="default15" src="assets/icon/yugioh.jpg" alt="Memory Card">
+            </div>
+
+            <div class="memory-card" id="memory-game16" onclick="flipCard(this)" data-framework="imagem8">
+                <img class="front-face" id="imagem16" alt="imagem8">
+                <img class="back-face" id="default16" src="assets/icon/yugioh.jpg" alt="Memory Card">
+            </div>
+        </section>
+    </div>
+    <ion-fab class="back" vertical="bottom" horizontal="start" slot="fixed" (click)="backHome()">
+        <ion-fab-button color="tertiary">
+            <ion-icon name="arrow-back-circle"></ion-icon>
+        </ion-fab-button>
+    </ion-fab>
+</div>

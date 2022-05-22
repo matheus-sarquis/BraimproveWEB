@@ -1,0 +1,150 @@
+<div class="home">
+  <div class="init">
+    <ion-button id="3" onclick="carregarSudoku('easy')" style="margin: 20px" color="tertiary" (click)="start()">
+        COMEÇAR
+    </ion-button>
+    <ion-progress-bar id="1" type="indeterminate" hidden></ion-progress-bar>
+</div>
+  <div class="content" hidden id="2">
+    <tr class="row">
+      <td id="00" class="cell"><input type="text" maxlength="1" readonly (click)="selection('00')"></td>
+      <td id="01" class="cell"><input type="text" maxlength="1" readonly (click)="selection('01')"></td>
+      <td id="02" class="cellRight"><input type="text" maxlength="1" readonly (click)="selection('02')"></td>
+      <td id="03" class="cell"><input type="text" maxlength="1" readonly (click)="selection('03')"></td>
+      <td id="04" class="cell"><input type="text" maxlength="1" readonly (click)="selection('04')"></td>
+      <td id="05" class="cellRight"><input type="text" maxlength="1" readonly (click)="selection('05')"></td>
+      <td id="06" class="cell"><input type="text" maxlength="1" readonly (click)="selection('06')"></td>
+      <td id="07" class="cell"><input type="text" maxlength="1" readonly (click)="selection('07')"></td>
+      <td id="08" class="cell"><input type="text" maxlength="1" readonly (click)="selection('08')"></td>
+    <tr class="row">
+      <td id="10" class="cell"><input type="text" maxlength="1" readonly (click)="selection('10')"></td>
+      <td id="11" class="cell"><input type="text" maxlength="1" readonly (click)="selection('11')"></td>
+      <td id="12" class="cellRight"><input type="text" maxlength="1" readonly (click)="selection('12')"></td>
+      <td id="13" class="cell"><input type="text" maxlength="1" readonly (click)="selection(13)"></td>
+      <td id="14" class="cell"><input type="text" maxlength="1" readonly (click)="selection(14)"></td>
+      <td id="15" class="cellRight"><input type="text" maxlength="1" readonly (click)="selection(15)"></td>
+      <td id="16" class="cell"><input type="text" maxlength="1" readonly (click)="selection(16)"></td>
+      <td id="17" class="cell"><input type="text" maxlength="1" readonly (click)="selection(17)"></td>
+      <td id="18" class="cell"><input type="text" maxlength="1" readonly (click)="selection(18)"></td>
+    </tr>
+    <tr class="row">
+      <td id="20" class="cell"><input type="text" maxlength="1" readonly (click)="selection('20')"></td>
+      <td id="21" class="cell"><input type="text" maxlength="1" readonly (click)="selection('21')"></td>
+      <td id="22" class="cellRight"><input type="text" maxlength="1" readonly (click)="selection('22')"></td>
+      <td id="23" class="cell"><input type="text" maxlength="1" readonly (click)="selection(23)"></td>
+      <td id="24" class="cell"><input type="text" maxlength="1" readonly (click)="selection(24)"></td>
+      <td id="25" class="cellRight"><input type="text" maxlength="1" readonly (click)="selection(25)"></td>
+      <td id="26" class="cell"><input type="text" maxlength="1" readonly (click)="selection(26)"></td>
+      <td id="27" class="cell"><input type="text" maxlength="1" readonly (click)="selection(27)"></td>
+      <td id="28" class="cell"><input type="text" maxlength="1" readonly (click)="selection(28)"></td>
+    </tr>
+    <tr class="row">
+      <td id="30" class="cellTop"><input type="text" maxlength="1" readonly (click)="selection(30)"></td>
+      <td id="31" class="cellTop"><input type="text" maxlength="1" readonly (click)="selection(31)"></td>
+      <td id="32" class="cellTopRight"><input type="text" maxlength="1" readonly (click)="selection(32)"></td>
+      <td id="33" class="cellTop"><input type="text" maxlength="1" readonly (click)="selection(33)"></td>
+      <td id="34" class="cellTop"><input type="text" maxlength="1" readonly (click)="selection(34)"></td>
+      <td id="35" class="cellTopRight"><input type="text" maxlength="1" readonly (click)="selection(35)"></td>
+      <td id="36" class="cellTop"><input type="text" maxlength="1" readonly (click)="selection(36)"></td>
+      <td id="37" class="cellTop"><input type="text" maxlength="1" readonly (click)="selection(37)"></td>
+      <td id="38" class="cellTop"><input type="text" maxlength="1" readonly (click)="selection(38)"></td>
+    </tr>
+    <tr class="row">
+      <td id="40" class="cell"><input type="text" maxlength="1" readonly (click)="selection(40)"></td>
+      <td id="41" class="cell"><input type="text" maxlength="1" readonly (click)="selection(41)"></td>
+      <td id="42" class="cellRight"><input type="text" maxlength="1" readonly (click)="selection(42)"></td>
+      <td id="43" class="cell"><input type="text" maxlength="1" readonly (click)="selection(43)"></td>
+      <td id="44" class="cell"><input type="text" maxlength="1" readonly (click)="selection(44)"></td>
+      <td id="45" class="cellRight"><input type="text" maxlength="1" readonly (click)="selection(45)"></td>
+      <td id="46" class="cell"><input type="text" maxlength="1" readonly (click)="selection(46)"></td>
+      <td id="47" class="cell"><input type="text" maxlength="1" readonly (click)="selection(47)"></td>
+      <td id="48" class="cell"><input type="text" maxlength="1" readonly (click)="selection(48)"></td>
+    </tr>
+    <tr class="row">
+      <td id="50" class="cell"><input type="text" maxlength="1" readonly (click)="selection(50)"></td>
+      <td id="51" class="cell"><input type="text" maxlength="1" readonly (click)="selection(51)"></td>
+      <td id="52" class="cellRight"><input type="text" maxlength="1" readonly (click)="selection(52)"></td>
+      <td id="53" class="cell"><input type="text" maxlength="1" readonly (click)="selection(53)"></td>
+      <td id="54" class="cell"><input type="text" maxlength="1" readonly (click)="selection(54)"></td>
+      <td id="55" class="cellRight"><input type="text" maxlength="1" readonly (click)="selection(55)"></td>
+      <td id="56" class="cell"><input type="text" maxlength="1" readonly (click)="selection(56)"></td>
+      <td id="57" class="cell"><input type="text" maxlength="1" readonly (click)="selection(57)"></td>
+      <td id="58" class="cell"><input type="text" maxlength="1" readonly (click)="selection(58)"></td>
+    </tr>
+    <tr class="row">
+      <td id="60" class="cellTop"><input type="text" maxlength="1" readonly (click)="selection(60)"></td>
+      <td id="61" class="cellTop"><input type="text" maxlength="1" readonly (click)="selection(61)"></td>
+      <td id="62" class="cellTopRight"><input type="text" maxlength="1" readonly (click)="selection(62)"></td>
+      <td id="63" class="cellTop"><input type="text" maxlength="1" readonly (click)="selection(63)"></td>
+      <td id="64" class="cellTop"><input type="text" maxlength="1" readonly (click)="selection(64)"></td>
+      <td id="65" class="cellTopRight"><input type="text" maxlength="1" readonly (click)="selection(65)"></td>
+      <td id="66" class="cellTop"><input type="text" maxlength="1" readonly (click)="selection(66)"></td>
+      <td id="67" class="cellTop"><input type="text" maxlength="1" readonly (click)="selection(67)"></td>
+      <td id="68" class="cellTop"><input type="text" maxlength="1" readonly (click)="selection(68)"></td>
+    </tr>
+    <tr class="row">
+      <td id="70" class="cell"><input type="text" maxlength="1" readonly (click)="selection(70)"></td>
+      <td id="71" class="cell"><input type="text" maxlength="1" readonly (click)="selection(71)"></td>
+      <td id="72" class="cellRight"><input type="text" maxlength="1" readonly (click)="selection(72)"></td>
+      <td id="73" class="cell"><input type="text" maxlength="1" readonly (click)="selection(73)"></td>
+      <td id="74" class="cell"><input type="text" maxlength="1" readonly (click)="selection(74)"></td>
+      <td id="75" class="cellRight"><input type="text" maxlength="1" readonly (click)="selection(75)"></td>
+      <td id="76" class="cell"><input type="text" maxlength="1" readonly (click)="selection(76)"></td>
+      <td id="77" class="cell"><input type="text" maxlength="1" readonly (click)="selection(77)"></td>
+      <td id="78" class="cell"><input type="text" maxlength="1" readonly (click)="selection(78)"></td>
+    </tr>
+    <tr class="row">
+      <td id="80" class="cell"><input type="text" maxlength="1" readonly (click)="selection(80)"></td>
+      <td id="81" class="cell"><input type="text" maxlength="1" readonly (click)="selection(81)"></td>
+      <td id="82" class="cellRight"><input type="text" maxlength="1" readonly (click)="selection(82)"></td>
+      <td id="83" class="cell"><input type="text" maxlength="1" readonly (click)="selection(83)"></td>
+      <td id="84" class="cell"><input type="text" maxlength="1" readonly (click)="selection(84)"></td>
+      <td id="85" class="cellRight"><input type="text" maxlength="1" readonly (click)="selection(85)"></td>
+      <td id="86" class="cell"><input type="text" maxlength="1" readonly (click)="selection(86)"></td>
+      <td id="87" class="cell"><input type="text" maxlength="1" readonly (click)="selection(87)"></td>
+      <td id="88" class="cell"><input type="text" maxlength="1" readonly (click)="selection(88)"></td>
+    </tr>
+    <div class="numbers">
+      <tr class="row">
+        <td class="cellNumbers"><input type="text" value="1" maxlength="1" readonly (click)="selection1()">
+          <span [ngClass]="{'selected':Selected === 1}"></span>
+        </td>
+        <td class="cellNumbers"><input type="text" value="2" maxlength="1" readonly (click)="selection2()">
+          <span [ngClass]="{'selected':Selected === 2}"></span>
+        </td>
+        <td class="cellNumbers"><input type="text" value="3" maxlength="1" readonly (click)="selection3()">
+          <span [ngClass]="{'selected':Selected === 3}"></span>
+        </td>
+        <td class="cellNumbers"><input type="text" value="4" maxlength="1" readonly (click)="selection4()">
+          <span [ngClass]="{'selected':Selected === 4}"></span>
+        </td>
+        <td class="cellNumbers"><input type="text" value="5" maxlength="1" readonly (click)="selection5()">
+          <span [ngClass]="{'selected':Selected === 5}"></span>
+        </td>
+        <td class="cellNumbers"><input type="text" value="6" maxlength="1" readonly (click)="selection6()">
+          <span [ngClass]="{'selected':Selected === 6}"></span>
+        </td>
+        <td class="cellNumbers"><input type="text" value="7" maxlength="1" readonly (click)="selection7()">
+          <span [ngClass]="{'selected':Selected === 7}"></span>
+        </td>
+        <td class="cellNumbers"><input type="text" value="8" maxlength="1" readonly (click)="selection8()">
+          <span [ngClass]="{'selected':Selected === 8}"></span>
+        </td>
+        <td class="cellNumbers"><input type="text" value="9" maxlength="1" readonly (click)="selection9()">
+          <span [ngClass]="{'selected':Selected === 9}"></span>
+        </td>
+      </tr>
+    </div>
+    <div class="init">
+      <ion-button id="3" onclick="validarSudoku()" style="margin: 20px" color="tertiary" (click)="start()">
+          VALIDAR
+      </ion-button>
+  </div>
+    <ion-fab class="back" vertical="bottom" horizontal="start" slot="fixed" backHome (click)="backSudoku()">
+      <ion-fab-button color="tertiary">
+        <ion-icon name="arrow-back-circle"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+  </div>
+
+</div>

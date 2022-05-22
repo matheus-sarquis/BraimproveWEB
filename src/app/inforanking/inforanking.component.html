@@ -1,0 +1,18 @@
+<ion-item *ngIf="message">
+  <div class="fatherDiv">
+    <div class="divPlacar">
+      <ion-label class="ion-text-wrap lblName">
+        <h2>
+          {{ message.posicao}}
+         </h2>
+        <h2>
+         Nome:  {{ message.name}}
+        </h2>
+        <h4>
+         Placar:{{ message.score }}
+        </h4>
+        <!-- <h3>{{ message.subject }}</h3> -->
+      </ion-label>
+    </div>
+  </div>
+</ion-item>

@@ -1,0 +1,35 @@
+<div class="home">
+
+  <div class="logo">
+    <img class="brainimg" src="assets/icon/brain.png">
+    <h1>Tiro ao Alvo</h1>
+  </div>
+
+  <div class="content">
+
+    <div class="listnotes">
+      <ion-note (click)="selectionEasy()" class="note" color="success">
+        <span [ngClass]="{'selected': Selected === 1}">FÁCIL</span>
+      </ion-note>
+      <ion-note (click)="selectionMedium()" class="note" color="warning">
+        <span [ngClass]="{'selected':Selected === 2}">MÉDIO</span>
+
+      </ion-note>
+      <ion-note (click)="selectionHard()" class="note" color="danger">
+        <span [ngClass]="{'selected':Selected === 3}"> DÍFICIL
+        </span>
+      </ion-note>
+    </div>
+
+    <ion-button class="btn" style="margin: 20px" color="tertiary" jogarReflection (click)="jogarReflection()">
+      JOGAR
+    </ion-button>
+
+    <ion-fab class="back" vertical="bottom" horizontal="start" slot="fixed" backHome (click)="backHome()">
+      <ion-fab-button color="tertiary">
+        <ion-icon name="arrow-back-circle"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+
+  </div>
+</div>

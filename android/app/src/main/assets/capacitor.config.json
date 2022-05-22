@@ -1,0 +1,6 @@
+{
+	"appId": "io.ionic.starter",
+	"appName": "Braimprove",
+	"webDir": "www",
+	"bundledWebRuntime": false
+}

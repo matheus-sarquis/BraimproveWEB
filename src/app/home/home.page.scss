@@ -1,0 +1,76 @@
+.home {
+  background-color: #e7edea;
+  height: 100%;
+  width: 100%;
+}
+
+.brainimg {
+  width: 80px;
+  height: auto;
+  margin-right: 15px;
+}
+
+.amimalft {
+  width: 80px;
+  height: auto;
+  margin-right: 40px;
+}
+
+.fact {
+  font-size: 20px;
+}
+
+.content {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  padding: 30px 50px;
+}
+
+.btn {
+  padding: 5px, 90px;
+}
+
+.logo {
+  padding: 20px 90px;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  color: black;
+  display: flex;
+  flex-direction: row;
+}
+
+.persona {
+  padding: 10px 90px;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  color: black;
+  display: flex;
+  flex-direction: row;
+}
+
+.action {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  padding: 0px 50px;
+  margin: 10px;
+}
+
+.link {
+  color: black;
+  text-decoration: underline black;
+}
+
+.whatsapp-share-button {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  margin: 5px;
+  background-size: 100% 100%; /* ou 'contain' */
+  //background-image: url("[URL-DO-ICONE]");
+  background-repeat: no-repeat;
+  background-position: center;
+}
