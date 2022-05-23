@@ -12,9 +12,8 @@ import { DataService } from 'src/services/data.service';
 export class RankingComponent implements OnInit {
 
   Scores = []
-  // private data: DataService, 
-  constructor(public navCtrl: NavController) {
-    //this.getScore()
+  constructor(public navCtrl: NavController, private data: DataService){
+    this.getScore()
   }
 
   ngOnInit() { }
@@ -24,15 +23,15 @@ export class RankingComponent implements OnInit {
   }
 
 
-  // getScore() {
-  //   this.getMessages().subscribe((resp) => {
-  //     console.log(resp)
-  //     this.Scores = resp.lista
-  //   })
-  // }
+   getScore() {
+     this.getMessages().subscribe((resp) => {
+       console.log(resp)
+       this.Scores = resp.lista
+     })
+   }
 
-  // getMessages(): Observable<any> {
-  //   return this.data.getScore();
-  // }
+   getMessages(): Observable<any> {
+     return this.data.getScore();
+   }
 
 }

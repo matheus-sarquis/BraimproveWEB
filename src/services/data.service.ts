@@ -20,6 +20,6 @@ export class DataService {
 
   public getScore(): Observable<any> {
     //headers = headers.set('token', token);
-    return this.http.get( '/api/score')
+    return this.http.get( 'http://localhost:8080/api/score');
   }
 }
