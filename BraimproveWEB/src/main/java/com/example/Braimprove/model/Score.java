@@ -2,7 +2,6 @@ package com.example.Braimprove.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-import java.util.UUID;
 
 public class Score {
     private final Integer id;

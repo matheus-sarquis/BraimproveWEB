@@ -1,10 +1,8 @@
 package com.example.Braimprove.dao;
 
 import com.example.Braimprove.model.Score;
-import org.springframework.stereotype.Repository;
 
 import java.util.List;
-import java.util.UUID;
 
 public interface ScoreDao {
     List<Score> getAllScore( );
