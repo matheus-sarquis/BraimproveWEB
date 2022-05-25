@@ -8,7 +8,6 @@ public class ConnectDataBase {
     private static final String STRING_CONEXAO = "jdbc:mysql://localhost:3306/braimprove?useTimezone=true&serverTimezone=UTC";
     private static final String USUARIO = "root";
     private static final String SENHA = "";
-    private String tabela;
 
     public static Connection conectDb(){
         try{
@@ -19,9 +18,5 @@ public class ConnectDataBase {
             System.err.println("CONEXAO: " + e.getMessage());
             return null;
         }
-    }
-
-    protected void setTabela(String value){
-        tabela = value;
     }
 }

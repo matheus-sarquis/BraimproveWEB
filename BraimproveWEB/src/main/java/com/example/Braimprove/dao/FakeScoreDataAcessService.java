@@ -1,12 +1,10 @@
 package com.example.Braimprove.dao;
 
 import com.example.Braimprove.model.Score;
-import com.example.Braimprove.dao.ConnectDataBase;
 
 import org.springframework.stereotype.Repository;
 
 import java.sql.*;
-import java.util.UUID;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -34,8 +32,6 @@ public class FakeScoreDataAcessService implements ScoreDao {
             throw new RuntimeException(e);
         }
     }
-
-    private static List<Score> DB = new ArrayList<>();
 
     @Override
     public int insertScore(String nickname, String game, Float score, String dificuldade) {

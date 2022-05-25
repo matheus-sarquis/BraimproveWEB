@@ -68,5 +68,12 @@ create procedure spInsertScore
 @Id int ) as begin insert into Score(Id, Nickname, Game, Score)
 values (@Id, @Nickname, @Game, @Score) end
 
+## API REQUESTS
+
+<a href="https://ibb.co/B2Hm9dJ"><img src="https://i.ibb.co/B2Hm9dJ/imagem-2022-05-24-230856227.png" alt="imagem-2022-05-24-230856227" border="0"></a>
+<a href="https://ibb.co/64vmKz4"><img src="https://i.ibb.co/64vmKz4/imagem-2022-05-24-230946541.png" alt="imagem-2022-05-24-230946541" border="0"></a>
+<a href="https://ibb.co/W5tkKvB"><img src="https://i.ibb.co/W5tkKvB/imagem-2022-05-24-231029317.png" alt="imagem-2022-05-24-231029317" border="0"></a>
+<a href="https://ibb.co/hHJ9vBY"><img src="https://i.ibb.co/hHJ9vBY/imagem-2022-05-24-231054527.png" alt="imagem-2022-05-24-231054527" border="0"></a>
+
 
 
