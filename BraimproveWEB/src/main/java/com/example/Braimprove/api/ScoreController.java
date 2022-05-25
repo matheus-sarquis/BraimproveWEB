@@ -14,6 +14,7 @@ public class ScoreController {
     private final ScoreService scoreService;
 
     @GetMapping
+    @CrossOrigin
     public List<Score> listScore( ) {
         return scoreService.listScore();
     }
@@ -24,11 +25,13 @@ public class ScoreController {
     }
 
     @PostMapping
+    @CrossOrigin
     public void addScore(@RequestBody Score score){
         scoreService.addScore(score);
     }
 
     @DeleteMapping
+    @CrossOrigin
     public String deleteScore(@RequestParam("Id") Integer id){
        return scoreService.deleteScore(id);
     }

@@ -7,7 +7,9 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class InforankingComponent implements OnInit {
   @Input() message: any;
-  constructor() { }
+  constructor() { 
+    console.log(this.message)
+  }
 
   ngOnInit() {}
 
