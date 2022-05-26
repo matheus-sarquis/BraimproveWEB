@@ -9,10 +9,10 @@
       <ion-content>
         <ion-list>
           <ion-item [button]="true" [detail]="false" (click)="rankingSudoku()">
-            <ion-label>Sudoku</ion-label>
+            <ion-col>Sudoku</ion-col>
           </ion-item>
           <ion-item [button]="true" [detail]="false" (click)="rankingMemoria()">
-            <ion-label>Memória</ion-label>
+            <ion-col>Memória</ion-col>
           </ion-item>
         </ion-list>
       </ion-content>
@@ -21,21 +21,54 @@
   <ion-title>Ranking</ion-title>
 </ion-toolbar>
 <div class="content">
-  <ion-list class="teste">
+  <!-- <ion-list class="teste">
     <ion-item class="color">
-      <ion-label class="label">
-        Posição:
-      </ion-label>
-      <ion-label class="label">
-        Nickname:
-      </ion-label>
-      <ion-label class="label">
-        Game:
-      </ion-label>
-      <ion-label class="label">
-        Score:
-      </ion-label>
+      <ion-list  class="teste">
+        <ion-col class="label">
+          Posição:
+        </ion-col>
+        <ion-col class="label">
+          Nickname:
+        </ion-col>
+        <ion-col class="label">
+          Game:
+        </ion-col>
+        <ion-col class="label">
+          Score:
+        </ion-col>
+      </ion-list>
     </ion-item>
     <app-inforanking *ngFor="let score of Scores" [score]="score" class="teste"> </app-inforanking>
-  </ion-list>
+  </ion-list> -->
+
+  <ion-grid>
+    <ion-row style="border-bottom: 1px solid black;padding: 5px 0;">
+      <ion-col class="label" style="text-align: center;">
+        Posição:
+      </ion-col>
+      <ion-col class="label" style="text-align: center;">
+        Nickname:
+      </ion-col>
+      <ion-col class="label" style="text-align: center;">
+        Game:
+      </ion-col>
+      <ion-col class="label" style="text-align: center;">
+        Score:
+      </ion-col>
+    </ion-row>
+    <ion-row  *ngFor="let score of Scores" style="border-bottom: 1px solid black; padding: 5px 0;">
+      <ion-col class="label" style="text-align: center;">
+        {{ score.position }}
+      </ion-col>
+      <ion-col class="label" style="text-align: center;">
+        {{ score.name }}
+      </ion-col>
+      <ion-col class="label" style="text-align: center;">
+        {{ score.game }}
+      </ion-col>
+      <ion-col class="label" style="text-align: center;">
+        {{ score.score }}
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </div>
