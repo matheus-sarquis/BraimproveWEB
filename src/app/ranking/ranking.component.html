@@ -1,4 +1,28 @@
-<ion-list>
-  <app-inforanking *ngFor="let message of Scores" [message]="message"> </app-inforanking>
-</ion-list>
+<ion-toolbar>
+  <ion-buttons slot="secondary">
+    <ion-button color="secondary" id="btnAlterScore">
+      <ion-icon slot="icon-only" ios="ellipsis-horizontal" md="ellipsis-vertical"></ion-icon>
+    </ion-button>
+  </ion-buttons>
+<ion-popover trigger="btnAlterScore" [dismissOnSelect]="true">
+  <ng-template>
+    <ion-content>
+      <ion-list>
+        <ion-item [button]="true" [detail]="false" (click)="rankingSudoku()">
+          <ion-label>Sudoku</ion-label>
+        </ion-item>
+        <ion-item [button]="true" [detail]="false"(click)="rankingMemoria()">
+          <ion-label>Memória</ion-label>
+        </ion-item>
+      </ion-list>
+    </ion-content>
+  </ng-template>
+</ion-popover>
+  <ion-title>Ranking</ion-title>
+</ion-toolbar>
+  <div class="content"> 
+    <ion-list class="test">
+      <app-inforanking *ngFor="let score of Scores" [score]="score"> </app-inforanking>
+    </ion-list>
+  </div>
 

@@ -6,9 +6,10 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./inforanking.component.scss'],
 })
 export class InforankingComponent implements OnInit {
-  @Input() message: any;
+  @Input() score: any;
+
   constructor() { 
-    console.log(this.message)
+    console.log(this.score)
   }
 
   ngOnInit() {}

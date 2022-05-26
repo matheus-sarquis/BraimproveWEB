@@ -34,4 +34,12 @@ export class RankingComponent implements OnInit {
      return this.data.getScore();
    }
 
+   rankingSudoku(){
+      //filtrar scores
+   }
+//var sortedArray: number[] = numericArray.sort((n1,n2) => n1 - n2);
+   rankingMemoria(){
+      //filtrar scores
+   }
+
 }
