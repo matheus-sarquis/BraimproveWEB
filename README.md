@@ -37,7 +37,7 @@ Braimprove - Aplicativo para treinamento cerebral feito no 7º Semestre de EC
   
  ### Auxiliares
   
-- IONIC
+- IONIC 6
 - Angular.js
 - Spring boot
   
@@ -58,15 +58,6 @@ create TABLE [dbo].[Score]
 [Dificuldade] NVARCHAR(10)
 )
 
-#Stored Procedures
-
-create procedure spInsertScore
-( 
-@Nickname NVARCHAR(50),
-@Game NVARCHAR(50),
-@Score float,
-@Id int ) as begin insert into Score(Id, Nickname, Game, Score)
-values (@Id, @Nickname, @Game, @Score) end
 
 ## API REQUESTS
 
