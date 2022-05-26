@@ -10,7 +10,7 @@
   }
 
   .game{
-    padding: 100px 0px;
+    padding: 150px 0px;
   }
 
   .load{
@@ -35,8 +35,8 @@ body {
 }
 
 .memory-game {
-    width: 370px;
-    height: 370px;
+    width: 500px;
+    height: 500px;
     margin: auto;
     display: flex;
     flex-wrap: wrap;
@@ -66,7 +66,6 @@ body {
 .back-face {
     width: 100%;
     height: 100%;
-    padding: 20px;
     position: absolute;
     border-radius: 5px;
     background: transparent;
