@@ -1,8 +1,18 @@
-.lblName{
-    color: red;
-    font-size: 40px;
+
+.item {
+    width: 100%;
+    display: flex;
+    --ion-item-background: #e7edea;
 }
 
-.divPlacar{
-    color: blue;
+.teste{
+    width: 100%; 
+    background-color: #e7edea;
+}
+
+.label{
+    color: black;
+}
+.color {
+    --ion-item-background: #e7edea;
 }

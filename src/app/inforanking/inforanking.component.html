@@ -1,9 +1,16 @@
-  <div class="fatherDiv" style="color:blueviolet">
-    <ion-item *ngIf="score">
-      <ion-label class="lblName" style="color:red">
-        Posição: {{ score.position }}
-        Nome:  {{ score.name }} 
-        Score:  {{ score.score }}
-      </ion-label>
-    </ion-item>
-  </div>
+<ion-item *ngIf="score">
+  <ion-list class="item">
+    <ion-label class="label">
+      {{ score.position }}
+    </ion-label>
+    <ion-label class="label">
+      {{ score.name }}
+    </ion-label>
+    <ion-label class="label">
+      {{ score.game }}
+    </ion-label>
+    <ion-label class="label">
+      {{ score.score }}
+    </ion-label>
+  </ion-list>
+</ion-item>

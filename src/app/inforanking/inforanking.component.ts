@@ -7,6 +7,7 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class InforankingComponent implements OnInit {
   @Input() score: any;
+  Scores = []
 
   constructor() { 
     console.log(this.score)
