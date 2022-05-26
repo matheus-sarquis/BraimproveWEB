@@ -1,3 +1,4 @@
+import { NavController } from '@ionic/angular';
 import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
@@ -9,10 +10,11 @@ export class InforankingComponent implements OnInit {
   @Input() score: any;
   Scores = []
 
-  constructor() { 
+  constructor() {
     console.log(this.score)
   }
 
-  ngOnInit() {}
+  ngOnInit() { }
+
 
 }

@@ -21,26 +21,6 @@
   <ion-title>Ranking</ion-title>
 </ion-toolbar>
 <div class="content">
-  <!-- <ion-list class="teste">
-    <ion-item class="color">
-      <ion-list  class="teste">
-        <ion-col class="label">
-          Posição:
-        </ion-col>
-        <ion-col class="label">
-          Nickname:
-        </ion-col>
-        <ion-col class="label">
-          Game:
-        </ion-col>
-        <ion-col class="label">
-          Score:
-        </ion-col>
-      </ion-list>
-    </ion-item>
-    <app-inforanking *ngFor="let score of Scores" [score]="score" class="teste"> </app-inforanking>
-  </ion-list> -->
-
   <ion-grid>
     <ion-row style="border-bottom: 1px solid black;padding: 5px 0;">
       <ion-col class="label" style="text-align: center;">
@@ -56,7 +36,7 @@
         Score:
       </ion-col>
     </ion-row>
-    <ion-row  *ngFor="let score of Scores" style="border-bottom: 1px solid black; padding: 5px 0;">
+    <ion-row *ngFor="let score of Scores" style="border-bottom: 1px solid black; padding: 5px 0;">
       <ion-col class="label" style="text-align: center;">
         {{ score.position }}
       </ion-col>
@@ -71,4 +51,9 @@
       </ion-col>
     </ion-row>
   </ion-grid>
+  <ion-fab class="back" vertical="bottom" horizontal="start" slot="fixed" (click)="backHome()">
+    <ion-fab-button color="tertiary">
+      <ion-icon name="arrow-back-circle"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
 </div>
